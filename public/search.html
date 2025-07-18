@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jiji-like Marketplace - Categories</title>
+    <title>Jiji-like Marketplace - Search Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,13 +33,31 @@
         </div>
     </nav>
     <div class="container">
-        <h1 class="my-4">Categories</h1>
-        <div class="list-group">
-            <a href="/category.html?category=Electronics" class="list-group-item list-group-item-action">Electronics</a>
-            <a href="/category.html?category=Fashion" class="list-group-item list-group-item-action">Fashion</a>
-            <a href="/category.html?category=Home%20&%20Garden" class="list-group-item list-group-item-action">Home & Garden</a>
-            <a href="/category.html?category=Vehicles" class="list-group-item list-group-item-action">Vehicles</a>
+        <h1 class="my-4" id="search-query">Search Results for ""</h1>
+        <div class="row">
+            <!-- Example Listing -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="/listing.html"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/listing.html">Listing Title</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for more listings -->
         </div>
     </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        document.getElementById('search-query').textContent = 'Search Results for "' + query + '"';
+    </script>
 </body>
 </html>
